@@ -9,4 +9,4 @@ cd /home/$(username)/shell_framework/programs/JAVA/ && mkdir lib java_files bin
 cd /home/$(username)/shell_framework/programs/QT/ && mkdir lib QT_files bin
 cd /home/$(username)/shell_framework/programs/sql/ && mkdir lib bin
 cd /home/$(username)/shell_framework/arch/ && mkdir arch_x86 arch_64 arch_amd64
-#done yet#
+#done yet successfully on a 32-bit Live system #
