@@ -1,0 +1,10 @@
+#!/bin/sh
+#usage: show the system address....
+
+	ifconfig | grep inet\ addr:
+	ifconfig | grep HWaddr 
+	ifconfig | grep  Mask:
+	ifconfig | grep inet6\ addr:
+	ifconfig | grep Bcast:
+	ifconfig | grep RX\ bytes:
+	ifconfig | grep TX\ bytes:
