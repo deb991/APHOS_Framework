@@ -1,0 +1,12 @@
+#!/bin/sh
+cd /home/$(username)/ && makdir -p shell_framework
+cd /home/$(username)/shell_framework/ && mkdir bin source lib bash_lib .sh_lib python py_gtk GUI license media source_code general_files change_logs log history_log
+cd /home/$(username)/shell_framework/ && mkdir backup conf_files conf.d Documents programs program_files arch workstation resource sys_backup sys_conf sys_backup
+cd /home/$(username)/shell_framework/programs/ && mkdir C Python JAVA QT SQL OTHERS
+cd /home/$(username)/shell_framework/programs/C/ && mkdir lib c_files bin
+cd /home/$(username)/shell_framework/programs/Python/ && mkdir lib py_files bin
+cd /home/$(username)/shell_framework/programs/JAVA/ && mkdir lib java_files bin
+cd /home/$(username)/shell_framework/programs/QT/ && mkdir lib QT_files bin
+cd /home/$(username)/shell_framework/programs/sql/ && mkdir lib bin
+cd /home/$(username)/shell_framework/arch/ && mkdir arch_x86 arch_64 arch_amd64
+#done yet#
