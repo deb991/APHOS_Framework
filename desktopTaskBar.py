@@ -1,10 +1,10 @@
-from Tkinter import *
-import tkMessageBox
-import tkFont
-from PIL import ImageTk
+from tkinter import *
+import tkinter.messagebox
+import tkinter.font
 import os
 import sys
 import subprocess
+
 
 desktopTaskBar = Tk()
 
@@ -29,7 +29,10 @@ desktopTaskBar.overrideredirect(1)
 desktopTaskBar.lift()
 
 
-helv9 = tkFont.Font(family='Helvetica', size=9, weight=tkFont.BOLD)
+#helv9 = tkFont.Font(family='Helvetica', size=9, weight=tkFont.BOLD)
+helv9 = tkinter.font.Font(family='Helvetica', size=7, weight='bold')
+tkinter.font.families()
+ButtFontColor = '#00A7FB'
 
 
 def __init__(self):
@@ -41,7 +44,7 @@ def __init__(self):
 
 def on_Exit(self):
     """When you click to exit, this function is called"""
-    if tkMessageBox.askyesno ( "Exit", "Do you want to quit the application?" ):
+    if tkinter.messagebox.askyesno ( "Exit", "Do you want to quit the application?" ):
         self.destroy ()
 
 def center(self):
@@ -55,55 +58,55 @@ def make_topmost(self):
     self.attributes ( "-topmost", 0 )
 
 def Search():
-    print'Search'
-b = Button ( desktopTaskBar, text="Search", font = helv9, command=Search, padx=8, bg='black', fg='white')
+    print('Search')
+b = Button ( desktopTaskBar, text="Search", font = helv9, command=Search, padx=8, bg='black', fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def OUTLOOK():
-    print'OUTLOOK'
+    print('OUTLOOK')
     os.chdir ( 'C:\\Program Files\\Microsoft Office\\root\\Office16\\' )
     os.startfile (r"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE")
-b = Button ( desktopTaskBar, text="OutLook", font = helv9, command=OUTLOOK, padx=6, bg="black", fg='white')
+b = Button ( desktopTaskBar, text="OutLook", font = helv9, command=OUTLOOK, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def MSSequalServer():
-    print'Initiating SEQUAL MANAGEMENT STUDIO'
+    print('Initiating SEQUAL MANAGEMENT STUDIO')
     os.chdir("C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE")
     os.startfile ( r"C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\\Ssms.exe")
-b = Button ( desktopTaskBar, text="Sequal Server", font = helv9, command=MSSequalServer, padx=6, bg="black", fg='white')
+b = Button ( desktopTaskBar, text="Sequal Server", font = helv9, command=MSSequalServer, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side =LEFT)
 
 def PLSql():
-    print'Initiating SQL developer'
+    print('Initiating SQL developer')
     os.chdir("C:\\Users\\Debashis.Biswas\\Software\\sqldeveloper")
     os.startfile ( r"C:\\Users\\Debashis.Biswas\\Software\\sqldeveloper\\sqldeveloper.exe")
-b = Button ( desktopTaskBar, text="PL/ SQL",font = helv9, command=PLSql, padx=6, bg="black", fg='white')
+b = Button ( desktopTaskBar, text="PL/ SQL",font = helv9, command=PLSql, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def BMCControlM():
-    print'service start DDF'
-b = Button ( desktopTaskBar, text="Control M",font = helv9, command=BMCControlM, padx=6, bg="black", fg='white')
+    print('service start DDF')
+b = Button ( desktopTaskBar, text="Control M",font = helv9, command=BMCControlM, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def PyCharmIDE():
-    print'service start DDF'
-b = Button ( desktopTaskBar, text="PyCharm",font = helv9, command=PyCharmIDE, padx=6, bg="black", fg='white')
+    print('service start DDF')
+b = Button ( desktopTaskBar, text="PyCharm",font = helv9, command=PyCharmIDE, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def Visual_BasicIDE():
-    print'service start DDF'
-b = Button ( desktopTaskBar, text="Visual Basic",font = helv9, command=Visual_BasicIDE, padx=6, bg="black", fg='white')
+    print('service start DDF')
+b = Button ( desktopTaskBar, text="Visual Basic",font = helv9, command=Visual_BasicIDE, padx=6, bg="black", fg=ButtFontColor)
 b.place(anchor=SW)
 b.pack (side = LEFT)
 
 def Exit():
-    print'EXIT'
+    print('EXIT')
     desktopTaskBar.destroy()
 b = Button ( desktopTaskBar, text="Exit",font = helv9, command=Exit, padx=3, bg="black", fg='red')
 b.place(anchor=SW)
@@ -111,8 +114,15 @@ b.pack (side = RIGHT)
 
 
 def File_Manager():
-    print 'File manager'
-b = Button ( desktopTaskBar, text="File Manager", font=helv9, command=Visual_BasicIDE, padx=6, bg="black", fg='white' )
+    print('File manager')
+b = Button ( desktopTaskBar, text="File Manager", font=helv9, command=File_Manager, padx=6, bg="black", fg=ButtFontColor )
+b.place ( anchor=SW )
+b.pack ( side= LEFT )
+
+def QUERY_LIBRARY():
+    print('Query Library')
+    os.startfile ( r"C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\\Ssms.exe" )
+b = Button ( desktopTaskBar, text="QUEERY LIBRARY", font=helv9, command=QUERY_LIBRARY, padx=6, bg="black", fg=ButtFontColor )
 b.place ( anchor=SW )
 b.pack ( side= LEFT )
 
