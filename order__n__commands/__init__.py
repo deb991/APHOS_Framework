@@ -28,11 +28,16 @@ def RGB__colorCode__find():
     cv2.imshow('Image', img__src)
     cv2.waitKey(0)
 
-def RIO__declear():         #Region of interest == ROI
+def ROI():
     img__src = cv2.imread('D:\\PycharmProjects\\Project_TANDAV(JEAL_JORSTA)\\res\\smpl2.jpg')
-    (h, w, d) = img__src.shape
-    ROI = img__src[60:120, 320:420]
-    cv2.imshow('ROI', ROI)
+
+    showCrosshair = False         #To hide crosshair while selecting area from picture.
+    fromCenter = False            #To hide crosshair while selecting area from picture.
+    r = cv2.selectROI('Sample__Picture__', img__src, fromCenter, showCrosshair)
+
+    imCrop = img__src[int(r[1]):int(r[1]+r[3]), int(r[0]):int(r[0]+r[2])]  #first element provided for window name.
+
+    cv2.imshow('Cropped__sample__', imCrop) #Here first element is given for window name.
     cv2.waitKey(0)
 
 def face_dtect():
@@ -59,8 +64,8 @@ def face_dtect():
     cv2.waitKey(0)
 
 if __name__ == '__main__':
-    img__test()
-    img__display()
-    RGB__colorCode__find()
-    RIO__declear()
-    face_dtect()
+    #img__test()
+    #img__display()
+    #RGB__colorCode__find()
+    #face_dtect()
+    ROI()
